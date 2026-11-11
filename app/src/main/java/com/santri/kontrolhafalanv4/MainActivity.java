@@ -1,4 +1,5 @@
-package com.santri.kontrolafalanv4;
+package com.santri.kontrolhafalanv4;
+import com.santri.kontrolhafalanv4.R;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;

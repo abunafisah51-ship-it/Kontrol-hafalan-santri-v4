@@ -1,4 +1,5 @@
 package com.santri.kontrolhafalanv4;
+import com.santri.kontrolhafalanv4.R;
 
 import android.view.LayoutInflater;
 import android.view.View;
