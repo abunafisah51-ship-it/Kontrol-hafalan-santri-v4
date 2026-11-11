@@ -6,17 +6,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import java.util.List;
 
 public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.ViewHolder> {
-    private ArrayList<String> list;
+    private List<String> list;
     private OnItemClickListener listener;
 
     public interface OnItemClickListener {
         void onItemClick(int position);
     }
 
-    public SurahAdapter(ArrayList<String> list, OnItemClickListener listener) {
+    public SurahAdapter(List<String> list, OnItemClickListener listener) {
         this.list = list;
         this.listener = listener;
     }
