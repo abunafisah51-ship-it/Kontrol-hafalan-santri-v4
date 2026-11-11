@@ -1,6 +1,7 @@
 package com.santri.kontrolhafalanv4;
 import com.santri.kontrolhafalanv4.R;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             surahList.add("Al-Baqarah");
 
             SurahAdapter adapter = new SurahAdapter(surahList, position -> {
-                // Aksi klik surah
+                Intent i = new Intent(MainActivity.this, DetailActivity.class); i.putExtra("surah_name", surahList.get(position)); startActivity(i);
             });
             recyclerViewSurah.setAdapter(adapter);
         }

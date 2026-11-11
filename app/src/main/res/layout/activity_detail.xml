@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
- android:orientation="vertical" android:padding="24dp"
- android:layout_width="match_parent" android:layout_height="match_parent">
- <TextView android:id="@+id/tvSurah" android:textSize="20sp" android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content"/>
- <EditText android:id="@+id/etNama" android:hint="Nama Santri" android:layout_width="match_parent" android:layout_height="wrap_content"/>
- <EditText android:id="@+id/etCatatan" android:hint="Catatan setoran / ayat terakhir" android:layout_width="match_parent" android:layout_height="wrap_content"/>
- <CheckBox android:id="@+id/cbHafal" android:text="Sudah Hafal" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
- <Button android:id="@+id/btnSimpan" android:text="Simpan" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+ android:layout_width="match_parent" android:layout_height="match_parent"
+ android:orientation="vertical" android:padding="24dp">
+ <TextView android:id="@+id/tvJudulSurah" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="24sp" android:textStyle="bold"/>
+ <EditText android:id="@+id/etCatatan" android:layout_width="match_parent" android:layout_height="200dp" android:hint="Tulis catatan hafalan disini... Ayat berapa, sudah lancar / belum" android:gravity="top"/>
+ <Button android:id="@+id/btnSimpan" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SIMPAN"/>
 </LinearLayout>
