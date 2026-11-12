@@ -12,5 +12,6 @@
         <activity android:name=".ProgressActivity" />
         <activity android:name=".WaliActivity" />
         <activity android:name=".DashboardActivity" />
+            <activity android:name=".TambahSantriActivity" />
     </application>
 </manifest>
