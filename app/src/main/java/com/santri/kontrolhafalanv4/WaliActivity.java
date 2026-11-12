@@ -1,16 +1,14 @@
 package com.santri.kontrolhafalanv4;
-import android.os.Bundle; import android.widget.*; import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle; import android.graphics.*; import android.widget.*;
+import androidx.appcompat.app.AppCompatActivity; import java.util.*;
 public class WaliActivity extends AppCompatActivity {
- protected void onCreate(Bundle b){ super.onCreate(b); setContentView(R.layout.activity_form);
-  ((TextView)findViewById(R.id.tvJudul)).setText("👨‍👩‍👦 Laporan Wali Santri");
-  ((EditText)findViewById(R.id.et1)).setHint("Ketik nama anak: Fatan");
-  findViewById(R.id.et2).setVisibility(android.view.View.GONE); findViewById(R.id.et3).setVisibility(android.view.View.GONE); findViewById(R.id.et4).setVisibility(android.view.View.GONE); findViewById(R.id.spStatus).setVisibility(android.view.View.GONE);
-  ((Button)findViewById(R.id.btnSimpan)).setText("LIHAT LAPORAN");
-  findViewById(R.id.btnSimpan).setOnClickListener(v->{
-   String nama=((EditText)findViewById(R.id.et1)).getText().toString();
-   String h=getSharedPreferences("hafalan",MODE_PRIVATE).getString("hafalan_"+nama,"Belum ada hafalan hari ini");
-   String m=getSharedPreferences("hafalan",MODE_PRIVATE).getString("murojaah_"+nama,"Belum ada murojaah hari ini");
-   ((TextView)findViewById(R.id.tvHasil)).setText("Laporan "+nama+" - 12 Nov 2026\n\n"+h+"\n\n"+m+"\n\nTarget Bulan Ini: 1 Juz\nKehadiran: Hadir");
-  });
+ protected void onCreate(Bundle b){ super.onCreate(b); UiHelper.setup(this);
+  LinearLayout lay=UiHelper.page(this,"LAPORAN WALI","Rekap untuk wali santri");
+  ScrollView sv=new ScrollView(this); LinearLayout isi=new LinearLayout(this); isi.setOrientation(LinearLayout.VERTICAL); isi.setPadding(32,28,32,28);
+  LinearLayout card=UiHelper.card(this); card.addView(UiHelper.label(this,"Pilih Santri"));
+  Spinner sp=new Spinner(this); String d=getSharedPreferences("hafalan",MODE_PRIVATE).getString("daftar_santri","Hudzaifah,Nabil,Fatan,Hisyam,Kenan"); List<String> ls=new ArrayList<>(Arrays.asList(d.split(","))); sp.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,ls)); card.addView(sp);
+  card.addView(UiHelper.label(this,"Isi Laporan")); TextView t=new TextView(this); t.setText("Hafalan Hari Ini: 3 Bagian\nMurojaah: 2 Halaman\nTotal: 2 Juz\n\nPesan Pengajar:\nAlhamdulillah, ananda semangat hari ini. Mohon diulang di rumah 10 menit."); t.setTextSize(15); t.setTypeface(Typeface.SANS_SERIF); t.setTextColor(UiHelper.TEKS); card.addView(t); isi.addView(card);
+  Button sm=UiHelper.tombol(this,"Kirim ke Wali (WA)"); sm.setOnClickListener(v->{ Toast.makeText(this,"Laporan siap dikirim ke Wali "+sp.getSelectedItem(),Toast.LENGTH_SHORT).show(); }); isi.addView(sm);
+  sv.addView(isi); lay.addView(sv); setContentView(lay);
  }
 }

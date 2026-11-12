@@ -1,22 +1,12 @@
 package com.santri.kontrolhafalanv4;
-import android.os.Bundle; import android.widget.*; import androidx.appcompat.app.AppCompatActivity;
-import java.util.*;
+import android.os.Bundle; import android.graphics.*; import android.widget.*;
+import androidx.appcompat.app.AppCompatActivity;
 public class TambahSantriActivity extends AppCompatActivity {
- protected void onCreate(Bundle b){ super.onCreate(b); setContentView(R.layout.activity_form);
-  ((TextView)findViewById(R.id.tvJudul)).setText("➕ Tambah Santri Baru");
-  ((EditText)findViewById(R.id.et1)).setHint("Nama Santri Baru: misal Ahmad");
-  findViewById(R.id.et2).setVisibility(android.view.View.GONE); findViewById(R.id.et3).setVisibility(android.view.View.GONE); findViewById(R.id.et4).setVisibility(android.view.View.GONE); findViewById(R.id.spStatus).setVisibility(android.view.View.GONE);
-  ((Button)findViewById(R.id.btnSimpan)).setText("TAMBAH SANTRI");
-  findViewById(R.id.btnSimpan).setOnClickListener(v->{
-   String nama=((EditText)findViewById(R.id.et1)).getText().toString().trim();
-   if(nama.isEmpty()){ Toast.makeText(this,"Isi dulu namanya",Toast.LENGTH_SHORT).show(); return; }
-   String lama=getSharedPreferences("hafalan",MODE_PRIVATE).getString("daftar_santri","Hudzaifah,Nabil,Fatan,Hisyam,Kenan");
-   if(!lama.contains(nama)){
-    String baru = lama+","+nama;
-    getSharedPreferences("hafalan",MODE_PRIVATE).edit().putString("daftar_santri",baru).apply();
-    FirebaseHelper.simpanOnline("daftar_santri", "\""+baru+"\"");
-    Toast.makeText(this,nama+" berhasil ditambah!",Toast.LENGTH_SHORT).show(); finish();
-   } else Toast.makeText(this,"Udah ada",Toast.LENGTH_SHORT).show();
-  });
+ protected void onCreate(Bundle b){ super.onCreate(b); UiHelper.setup(this);
+  LinearLayout lay=UiHelper.page(this,"TAMBAH SANTRI","Santri baru langsung online ke semua HP");
+  ScrollView sv=new ScrollView(this); LinearLayout isi=new LinearLayout(this); isi.setOrientation(LinearLayout.VERTICAL); isi.setPadding(32,28,32,28);
+  LinearLayout card=UiHelper.card(this); card.addView(UiHelper.label(this,"Nama Santri Baru")); EditText e=UiHelper.input(this,"Contoh: Umar"); card.addView(e); isi.addView(card);
+  Button sm=UiHelper.tombol(this,"Simpan & Kirim Online"); sm.setOnClickListener(v->{ String nm=e.getText().toString().trim(); if(nm.isEmpty()){ Toast.makeText(this,"Isi dulu namanya",Toast.LENGTH_SHORT).show(); return; } String lama=getSharedPreferences("hafalan",MODE_PRIVATE).getString("daftar_santri","Hudzaifah,Nabil,Fatan,Hisyam,Kenan"); String baru=lama.isEmpty()? nm : lama+","+nm; getSharedPreferences("hafalan",MODE_PRIVATE).edit().putString("daftar_santri",baru).apply(); FirebaseHelper.simpanOnline("daftar_santri","\""+baru+"\""); Toast.makeText(this,nm+" tersimpan & terkirim online",Toast.LENGTH_SHORT).show(); finish(); }); isi.addView(sm);
+  sv.addView(isi); lay.addView(sv); setContentView(lay);
  }
 }
