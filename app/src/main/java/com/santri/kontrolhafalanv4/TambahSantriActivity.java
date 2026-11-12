@@ -12,8 +12,10 @@ public class TambahSantriActivity extends AppCompatActivity {
    if(nama.isEmpty()){ Toast.makeText(this,"Isi dulu namanya",Toast.LENGTH_SHORT).show(); return; }
    String lama=getSharedPreferences("hafalan",MODE_PRIVATE).getString("daftar_santri","Hudzaifah,Nabil,Fatan,Hisyam,Kenan");
    if(!lama.contains(nama)){
-     getSharedPreferences("hafalan",MODE_PRIVATE).edit().putString("daftar_santri",lama+","+nama).apply();
-     Toast.makeText(this,nama+" berhasil ditambah!",Toast.LENGTH_SHORT).show(); finish();
+    String baru = lama+","+nama;
+    getSharedPreferences("hafalan",MODE_PRIVATE).edit().putString("daftar_santri",baru).apply();
+    FirebaseHelper.simpanOnline("daftar_santri", "\""+baru+"\"");
+    Toast.makeText(this,nama+" berhasil ditambah!",Toast.LENGTH_SHORT).show(); finish();
    } else Toast.makeText(this,"Udah ada",Toast.LENGTH_SHORT).show();
   });
  }
