@@ -7,5 +7,10 @@
 </intent-filter>
 </activity>
             <activity android:name=".DetailActivity" />
+            <activity android:name=".HafalanActivity" />
+        <activity android:name=".MurojaahActivity" />
+        <activity android:name=".ProgressActivity" />
+        <activity android:name=".WaliActivity" />
+        <activity android:name=".DashboardActivity" />
     </application>
 </manifest>

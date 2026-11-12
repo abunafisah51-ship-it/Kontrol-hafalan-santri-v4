@@ -1,32 +1,14 @@
 package com.santri.kontrolhafalanv4;
-import com.santri.kontrolhafalanv4.R;
-
-import android.content.Intent;
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.List;
-
+import android.content.Intent; import android.os.Bundle; import android.widget.*; import androidx.appcompat.app.AppCompatActivity; import java.util.Arrays; import java.util.List;
 public class MainActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        RecyclerView recyclerViewSurah = findViewById(R.id.recyclerViewSurah);
-        if (recyclerViewSurah != null) {
-            recyclerViewSurah.setLayoutManager(new LinearLayoutManager(this));
-
-            List<String> surahList = new ArrayList<>();
-            surahList.add("Al-Fatihah");
-            surahList.add("Al-Baqarah");
-
-            SurahAdapter adapter = new SurahAdapter(surahList, position -> {
-                Intent i = new Intent(MainActivity.this, DetailActivity.class); i.putExtra("surah_name", surahList.get(position)); startActivity(i);
-            });
-            recyclerViewSurah.setAdapter(adapter);
-        }
-    }
+ protected void onCreate(Bundle b){ super.onCreate(b); setContentView(R.layout.activity_main);
+  List<String> menu = Arrays.asList("👦 Daftar Santri","📖 Hafalan Baru","🔁 Murojaah","📊 Progres 30 Juz","👨‍👩‍👦 Laporan Wali","📈 Dashboard Pengajar");
+  ListView lv = findViewById(R.id.lvSurah);
+  lv.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menu));
+  lv.setOnItemClickListener((p,v,pos,id)->{
+   Class c = DetailActivity.class;
+   if(pos==1) c=HafalanActivity.class; else if(pos==2) c=MurojaahActivity.class; else if(pos==3) c=ProgressActivity.class; else if(pos==4) c=WaliActivity.class; else if(pos==5) c=DashboardActivity.class;
+   Intent i=new Intent(this,c); if(pos==0) i.putExtra("surah_name","Daftar Santri: Hudzaifah, Nabil, Fatan, Hisyam, Kenan"); startActivity(i);
+  });
+ }
 }

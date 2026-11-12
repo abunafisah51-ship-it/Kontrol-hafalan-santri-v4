@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+<TextView android:id="@+id/tvJudul" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="22sp" android:textStyle="bold"/>
+<EditText android:id="@+id/et1" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Nama Santri: Fatan"/>
+<EditText android:id="@+id/et2" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Surat: Al-Baqarah"/>
+<EditText android:id="@+id/et3" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Ayat: 1-5 / Halaman: 10-11"/>
+<EditText android:id="@+id/et4" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Catatan Pengajar"/>
+<Spinner android:id="@+id/spStatus" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<Button android:id="@+id/btnSimpan" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SIMPAN"/>
+<TextView android:id="@+id/tvHasil" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="16dp"/>
+</LinearLayout>
+</ScrollView>
