@@ -1,5 +1,6 @@
 package com.santri.kontrolhafalanv4;
-import android.os.Bundle; import android.content.Intent; import android.graphics.*; import android.widget.*;
+import android.os.Bundle;
+import android.app.AlertDialog; import android.content.Intent; import android.graphics.*; import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity; import java.util.*;
 public class MainActivity extends AppCompatActivity {
  protected void onCreate(Bundle b){ super.onCreate(b); UiHelper.setup(this);
@@ -35,6 +36,22 @@ tvLogin.setTextSize(13); tvLogin.setGravity(android.view.Gravity.CENTER); tvLogi
 tvLogin.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
 isi.addView(tvLogin);
 // Akhir Sambutan
+android.widget.TextView tvKelas = new android.widget.TextView(this);
+tvKelas.setText("3. KELAS & TARGET\n" + BUKOMFinal.KELAS_1 + " : " + BUKOMFinal.TARGET_KELAS_1_JUZ + " Juz\n" + BUKOMFinal.KELAS_2 + " : " + BUKOMFinal.TARGET_KELAS_2_JUZ + " Juz\n" + BUKOMFinal.KELAS_3 + " : " + BUKOMFinal.TARGET_KELAS_3_JUZ + " Juz\nTarget Akhir : " + BUKOMFinal.TARGET_AKHIR_JUZ + " Juz");
+tvKelas.setTextSize(12); tvKelas.setPadding(12,12,12,12);
+isi.addView(tvKelas);
+android.widget.TextView tvMax = new android.widget.TextView(this);
+tvMax.setText("4. MAX 6 ANAK\n" + BUKOMFinal.ATURAN_MAX + "\nMax: " + BUKOMFinal.MAX_ANAK_PER_PENTASMI + " santri");
+tvMax.setTextSize(12); tvMax.setPadding(12,12,12,12);
+isi.addView(tvMax);
+android.widget.TextView tvPindah = new android.widget.TextView(this);
+tvPindah.setText("5. " + BUKOMFinal.JUDUL_PINDAH + "\n" + BUKOMFinal.KETERANGAN_PINDAH + "\nMax " + BUKOMFinal.MAX_HARI_PINDAH + " hari");
+tvPindah.setTextSize(12); tvPindah.setPadding(12,12,12,12);
+isi.addView(tvPindah);
+android.widget.TextView tvLaporan = new android.widget.TextView(this);
+tvLaporan.setText("7. " + BUKOMFinal.LAPORAN_JUDUL + "\n" + BUKOMFinal.LAPORAN_VIA + "\n" + BUKOMFinal.FORMAT_LAPORAN);
+tvLaporan.setTextSize(12); tvLaporan.setPadding(12,12,12,12);
+isi.addView(tvLaporan);
   TextView foot=new TextView(this); foot.setText("Versi 5.0  •  Online  •  Data tersimpan di Firebase"); foot.setTextSize(11); foot.setTypeface(Typeface.SANS_SERIF); foot.setTextColor(UiHelper.ABU); foot.setGravity(android.view.Gravity.CENTER); foot.setPadding(0,10,0,0); isi.addView(foot);
   sv.addView(isi); lay.addView(sv); setContentView(lay);
  }
