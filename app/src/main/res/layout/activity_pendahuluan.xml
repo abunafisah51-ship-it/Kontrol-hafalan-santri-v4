@@ -1,13 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
- android:layout_width="match_parent" android:layout_height="match_parent"
- android:background="#FFFFFF" android:padding="16dp">
- <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-  <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-   android:text="BUKOM SANTRI" android:textSize="26sp" android:textStyle="bold" android:textColor="#1B5E20" android:gravity="center"/>
-  <TextView android:id="@+id/tvPendahuluan" android:layout_width="match_parent" android:layout_height="wrap_content"
-   android:textSize="16sp" android:layout_marginTop="16dp" android:lineSpacingExtra="4dp"/>
-  <Button android:id="@+id/btnLanjut" android:layout_width="match_parent" android:layout_height="wrap_content"
-   android:text="LANJUT" android:layout_marginTop="20dp" android:backgroundTint="#1B5E20"/>
- </LinearLayout>
-</ScrollView>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#0B4D2E"
+        android:padding="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KONTROL HAFALAN SANTRI"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pondok Pesantren  •  Program 30 Juz  •  Online"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Assalamu'alaikum Warahmatullahi Wabarakatuh"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#C8962E"
+                android:gravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selamat Datang di BUKOM Santri - Kontrol Hafalan Program 30 Juz"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#C8962E"
+                android:gravity="center"
+                android:layout_marginTop="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sebaik-baik kalian adalah orang yang mempelajari Al-Qur'an dan mengajarkannya. (HR. Bukhari)"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#C8962E"
+                android:gravity="center"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/btnLanjut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LANJUT"
+        android:textSize="18sp"
+        android:layout_margin="16dp"
+        android:backgroundTint="#0B4D2E"
+        android:textColor="#FFFFFF" />
+</LinearLayout>
