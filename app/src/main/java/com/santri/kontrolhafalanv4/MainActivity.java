@@ -19,6 +19,22 @@ public class MainActivity extends AppCompatActivity {
    card.setOnClickListener(v->{ Class c=DetailActivity.class; if(pos==1)c=HafalanActivity.class; else if(pos==2)c=MurojaahActivity.class; else if(pos==3)c=ProgressActivity.class; else if(pos==4)c=WaliActivity.class; else if(pos==5)c=DashboardActivity.class; else if(pos==6)c=TambahSantriActivity.class; Intent in=new Intent(this,c); if(pos==0){ String daftar=getSharedPreferences("hafalan",MODE_PRIVATE).getString("daftar_santri","Hudzaifah,Nabil,Fatan,Hisyam,Kenan"); in.putExtra("surah_name","Daftar Santri:\n"+daftar.replace(",","\n")); } startActivity(in); });
    isi.addView(card);
   }
+// BUKOM - Sambutan A, Tidak Dibedakan
+android.widget.TextView tvSalam = new android.widget.TextView(this);
+tvSalam.setText(Sambutan.BISMILLAH + "\n" + Sambutan.SALAM + "\n" + Sambutan.JUDUL + "\n" + Sambutan.SUBJUDUL + "\n\n" + Sambutan.HADITS);
+tvSalam.setTextSize(13); tvSalam.setGravity(android.view.Gravity.CENTER); tvSalam.setPadding(0,16,0,8);
+tvSalam.setTextColor(UiHelper.EMAS);
+isi.addView(tvSalam);
+android.widget.TextView tvTujuan = new android.widget.TextView(this);
+tvTujuan.setText(Sambutan.TUJUAN);
+tvTujuan.setTextSize(12); tvTujuan.setPadding(12,12,12,12);
+isi.addView(tvTujuan);
+android.widget.TextView tvLogin = new android.widget.TextView(this);
+tvLogin.setText(Sambutan.LOGIN_TEXT);
+tvLogin.setTextSize(13); tvLogin.setGravity(android.view.Gravity.CENTER); tvLogin.setPadding(0,8,0,16);
+tvLogin.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+isi.addView(tvLogin);
+// Akhir Sambutan
   TextView foot=new TextView(this); foot.setText("Versi 5.0  •  Online  •  Data tersimpan di Firebase"); foot.setTextSize(11); foot.setTypeface(Typeface.SANS_SERIF); foot.setTextColor(UiHelper.ABU); foot.setGravity(android.view.Gravity.CENTER); foot.setPadding(0,10,0,0); isi.addView(foot);
   sv.addView(isi); lay.addView(sv); setContentView(lay);
  }
