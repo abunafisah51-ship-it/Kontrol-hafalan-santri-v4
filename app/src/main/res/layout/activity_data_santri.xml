@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
- android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp" android:background="#FFFFFF">
- <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="DAFTAR SANTRI" android:textSize="22sp" android:textStyle="bold" android:textColor="#1B5E20" android:gravity="center"/>
-  <EditText android:id="@+id/etNamaSantri" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Nama Santri" android:layout_marginTop="16dp"/>
-  <Spinner android:id="@+id/spKelas" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp"/>
-  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-    <EditText android:id="@+id/etJuz" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:hint="Juz (misal: 5)" android:inputType="number" android:layout_marginTop="12dp"/>
-    <EditText android:id="@+id/etHalaman" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:hint="Halaman (misal: 120)" android:inputType="number" android:layout_marginTop="12dp" android:layout_marginStart="8dp"/>
-  </LinearLayout>
-  <EditText android:id="@+id/etPentasmi" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Nama Pentasmi'" android:layout_marginTop="12dp"/>
-  <EditText android:id="@+id/etWaWali" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Nomor WA Wali" android:inputType="phone" android:layout_marginTop="12dp"/>
-  <Button android:id="@+id/btnTambah" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="TAMBAH SANTRI" android:layout_marginTop="16dp" android:backgroundTint="#1B5E20"/>
-  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Daftar Santri:" android:textStyle="bold" android:layout_marginTop="20dp"/>
-  <ListView android:id="@+id/lvSantri" android:layout_width="match_parent" android:layout_height="600dp" android:layout_marginTop="8dp"/>
- </LinearLayout>
-</ScrollView>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F1F5F2">
+    <LinearLayout android:orientation="vertical" android:padding="16dp" android:background="#0B5D3B" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:text="DAFTAR SANTRI" android:textColor="#FFFFFF" android:textSize="24sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:text="Kelola santri aktif  •  Hapus jika lulus / keluar" android:textColor="#D1E7DD" android:textSize="13sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/tvTotal" android:text="Total 0 Santri" android:textColor="#FFD700" android:textStyle="bold" android:layout_marginTop="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <EditText android:id="@+id/etCari" android:hint="🔍 Cari nama santri..." android:background="@android:drawable/edit_text" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:id="@+id/containerSantri" android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </ScrollView>
+</LinearLayout>
