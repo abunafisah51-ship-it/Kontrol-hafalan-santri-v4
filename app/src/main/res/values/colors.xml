@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ic_launcher_background">#123A2B</color>
+    <color name="green_primary">#0B5D3B</color>
+    <color name="green_dark">#073D27</color>
+    <color name="green_light">#E6F2EB</color>
+    <color name="gold">#FFD700</color>
+    <color name="bg">#F1F5F2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#111111</color>
+    <color name="grey">#666666</color>
+    <color name="grey_light">#888888</color>
+    <color name="red">#D32F2F</color>
 </resources>

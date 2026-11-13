@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F1F5F2">
-    <LinearLayout android:orientation="vertical" android:padding="16dp" android:background="#0B5D3B" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <TextView android:text="DAFTAR SANTRI" android:textColor="#FFFFFF" android:textSize="24sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <TextView android:text="Kelola santri aktif  •  Hapus jika lulus / keluar" android:textColor="#D1E7DD" android:textSize="13sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/tvTotal" android:text="Total 0 Santri" android:textColor="#FFD700" android:textStyle="bold" android:layout_marginTop="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    android:orientation="vertical" android:background="#F1F5F2"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:padding="20dp" android:background="#0B5D3B"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:text="🕌  BAITUL QURAN" android:textColor="#FFD700" android:textSize="12sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:text="DAFTAR SANTRI" android:textColor="#FFFFFF" android:textSize="26sp" android:textStyle="bold" android:layout_marginTop="4dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:text="Kontrol Hafalan • Santri Aktif" android:textColor="#D1E7DD" android:textSize="13sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/tvTotal" android:text="Total 0 Santri" android:textColor="#FFD700" android:textStyle="bold" android:textSize="14sp" android:background="#073D27" android:padding="10dp" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
     </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <EditText android:id="@+id/etCari" android:hint="🔍 Cari nama santri..." android:background="@android:drawable/edit_text" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="match_parent">
+        <EditText android:id="@+id/etCari" android:hint="🔍  Cari nama santri..." android:background="#FFFFFF" android:padding="14dp" android:elevation="2dp" android:layout_marginBottom="14dp" android:layout_width="match_parent" android:layout_height="52dp"/>
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+            <LinearLayout android:id="@+id/containerSantri" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </ScrollView>
     </LinearLayout>
-    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
-        <LinearLayout android:id="@+id/containerSantri" android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-    </ScrollView>
 </LinearLayout>
