@@ -3,7 +3,7 @@ import android.os.Bundle; import android.graphics.*; import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity; import java.util.*;
 public class MurojaahActivity extends AppCompatActivity {
  protected void onCreate(Bundle b){ super.onCreate(b); UiHelper.setup(this);
-  LinearLayout lay=UiHelper.page(this,"MUROJAAH","Target: 2 Halaman / Hari");
+  LinearLayout lay=UiHelper.page(this,"MUROJAAH","Target: 2 ½ lembar / Hari");
   ScrollView sv=new ScrollView(this); LinearLayout isi=new LinearLayout(this); isi.setOrientation(LinearLayout.VERTICAL); isi.setPadding(32,28,32,28);
   LinearLayout card=UiHelper.card(this);
   card.addView(UiHelper.label(this,"Nama Santri"));
